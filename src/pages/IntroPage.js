@@ -20,13 +20,20 @@ function IntroPage() {
 
     return (
         <div >
+            <div className="title_text">
+                <h1>Intro to <br />Jazz Harmony</h1>
+                <p>A beginner's interactive guide on recognizing jazz progressions and the theory behind them -- no reading sheet music required!</p>
+                <div className="intro_btns">
+                    <BrowserRouter>
+                        <a href="/notes"><button className="main_btn">Start Learning</button></a>
+                        <a href="/notes"><button className="secondary_btn">Choose a Lesson</button></a>
+                    </BrowserRouter>
+                </div>
+            </div>
             <div className="parallax" > </div>
             <div className="cover">
                 <br />So you want to learn about Jazz harmony?
-                <PianoFuncs />
-                <BrowserRouter>
-                    <a href="/notes">test</a>
-                </BrowserRouter>
+                <br />
             </div>
         </div>
     );
