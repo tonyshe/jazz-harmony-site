@@ -138,7 +138,7 @@ class PianoFuncs extends React.Component {
                     />
                 </div>
                 <div>
-                    <button onClick={() => this.onButtonClick(this.c_maj_7)}>{this.state.buttonText}</button>
+                    <button className="main_btn" onClick={() => this.onButtonClick(this.c_maj_7)}>{this.state.buttonText}</button>
                 </div>
             </div>
         );
