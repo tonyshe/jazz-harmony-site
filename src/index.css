@@ -1,9 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+:root {
+    --btnColor: #b65f2d;
+    --btnColorHover: #f87f34;
+    --offWhite: #ffefe4;
+}
+
 body {
     margin: 0px;
 }
 
-li, a, button {
+h1 {
+    font-size: 50px;
+    font-family: 'Verdana';
+    margin-block: 14px;
+}
+
+.title_text {
+    position: absolute;
+    top: 25%;
+    left: 65%;
+    width: 30%;
+    max-width: 400px;
+    min-width: 350px;
+    color: white;
+    text-align: left;
+    font-family: 'Verdana';
+    margin-bottom: 0px;
+}
+
+.title_text p {
+    margin-top: 0px;
+    font-size: 14px;
+    margin-block-end: 14px;
+}
+
+.intro_btns {
+    display: inline-block;
+}
+
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 2px 0 2px;
+}
+
+li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -30,7 +74,7 @@ header {
 
 .cover {
     height: 2000px;
-    background-color: #f8c1a8;
+    background-color: var(--offWhite);
     font-size: 36px;
     text-align: center
 }
@@ -52,25 +96,36 @@ header {
     color: #19cc31
 }
 
-button {
+.main_btn {
     padding: 9px 25px;
-    background-color: rgb(230, 107, 107);
-    border: none;
+    background-color: var(--btnColor);
+    border: 2px solid var(--btnColor);
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: all 0.2s ease 0s;
+}
+
+.secondary_btn {
+    padding: 9px 25px;
+    background-color: rgb(0, 0, 0, 0);
+    border: 2px solid var(--offWhite);
+    color: #ffffff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
 }
 
 button:hover {
-    background-color: rgba(255, 0, 0, 0.8);
+    background-color: var(--btnColorHover);
+    border-color: var(--btnColorHover);
 }
 
 .parallax {
-    background-image: url("./img/lilpiano.jpg");
+    background-image: url("./img/dark_guitar.jpg");
     /* Set the height */
-    height: 100vh;
+    height: 80vh;
     /* Create a parallax effect */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
