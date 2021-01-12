@@ -10,15 +10,15 @@ import PianoPlayer from './PianoPlayer';
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const soundfontHostname = 'https://d1pzp51pvbm36p.cloudfront.net';
 
-const noteRange = {
-    first: MidiNumbers.fromNote('c3'),
-    last: MidiNumbers.fromNote('f4'),
-};
-const keyboardShortcuts = KeyboardShortcuts.create({
-    firstNote: noteRange.first,
-    lastNote: noteRange.last,
-    keyboardConfig: KeyboardShortcuts.HOME_ROW,
-});
+// const noteRange = {
+//     first: MidiNumbers.fromNote('c3'),
+//     last: MidiNumbers.fromNote('f4'),
+// };
+// const keyboardShortcuts = KeyboardShortcuts.create({
+//     firstNote: noteRange.first,
+//     lastNote: noteRange.last,
+//     keyboardConfig: KeyboardShortcuts.HOME_ROW,
+// });
 
 class PianoFuncs extends React.Component {
     state = {
@@ -33,16 +33,16 @@ class PianoFuncs extends React.Component {
         buttonAction: this.onClickPlay
     };
 
-    c_maj_7 = [
-        { "midiNumber": 48, "time": 0, "duration": 4 },
-        { "midiNumber": 52, "time": 0.5, "duration": 3.5 },
-        { "midiNumber": 55, "time": 1, "duration": 3 },
-        { "midiNumber": 59, "time": 1.5, "duration": 2.5 }]
-
     constructor(props) {
         super(props);
-
+        this.midiNotes = props.midiNotes;
+        this.noteRange = (props.firstNote && props.lastNote) ?
+            { first: MidiNumbers.fromNote(props.firstNote), last: MidiNumbers.fromNote(props.lastNote) } :
+            { first: MidiNumbers.fromNote('c3'), last: MidiNumbers.fromNote('f4') };
+        this.firstNote = props.firstNote || 'c3'
+        this.lastNote = props.lastNote || 'f4'
         this.scheduledEvents = [];
+        this.width = props.width || 400
     }
 
     getRecordingEndTime = (notes) => {
@@ -126,8 +126,8 @@ class PianoFuncs extends React.Component {
                             <PianoPlayer
                                 recording={this.state.recording}
                                 setRecording={this.setRecording}
-                                noteRange={noteRange}
-                                width={300}
+                                noteRange={this.noteRange}
+                                width={this.width}
                                 playNote={playNote}
                                 stopNote={stopNote}
                                 disabled={isLoading}
@@ -138,7 +138,7 @@ class PianoFuncs extends React.Component {
                     />
                 </div>
                 <div>
-                    <button className="main_btn" onClick={() => this.onButtonClick(this.c_maj_7)}>{this.state.buttonText}</button>
+                    <button className="main_btn" onClick={() => this.onButtonClick(this.midiNotes)}>{this.state.buttonText}</button>
                 </div>
             </div>
         );

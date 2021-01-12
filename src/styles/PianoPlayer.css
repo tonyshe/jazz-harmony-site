@@ -13,7 +13,7 @@ button:focus {outline:0;}
  */
 
 .ReactPiano__Key--natural {
-    background: #f6f5f3;
+    background: #ffffff;
     border: 1px solid #888;
     border-radius: 0px 0px 4px 4px;
     cursor: pointer;
@@ -36,7 +36,7 @@ button:focus {outline:0;}
    */
 
 .ReactPiano__Key--active {
-    background: rgb(233, 178, 178);
+    background: rgb(255, 123, 0);
 }
 
 .ReactPiano__Key--active.ReactPiano__Key--accidental {
