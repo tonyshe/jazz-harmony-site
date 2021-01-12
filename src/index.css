@@ -1,24 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 :root {
-    --btnColor: #b65f2d;
-    --btnColorHover: #f87f34;
-    --offWhite: #ffefe4;
+    --btnColor: #d85a11;
+    --btnColorHover: #ff9757;
+    --offWhite: #fffcfa;
+    --textColor: rgb(0, 0, 0);
 }
 
 body {
     margin: 0px;
+    background-color: var(--offWhite);
 }
 
 h1 {
     font-size: 50px;
     font-family: 'Verdana';
-    margin-block: 14px;
+    margin-block: 4px;
+}
+
+h2, h3 {
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: var(--textColor);
+    text-align: left;
+}
+
+.page-text p {
+    font-size: 14px;
+    text-align: left;
+    font-family: 'Verdana';
+    color: var(--textColor);
+}
+
+.page-text {
+    left: 20%;
+    width: 60%;
+    position: absolute;
+    background-color: var(--offWhite);
 }
 
 .title_text {
-    position: absolute;
+    position: relative;
     top: 25%;
-    left: 65%;
+    left: 60%;
     width: 30%;
     max-width: 400px;
     min-width: 350px;
@@ -26,6 +54,21 @@ h1 {
     text-align: left;
     font-family: 'Verdana';
     margin-bottom: 0px;
+}
+
+.lesson-title-box {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+.lesson-title {
+    font-size: 50px;
+    font-family: 'Raleway';
+    font-weight: 700;
+    position: relative;
+    color: white;
 }
 
 .title_text p {
@@ -47,7 +90,7 @@ button {
     margin: 0 2px 0 2px;
 }
 
-li, a {
+li {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -73,10 +116,14 @@ header {
 }
 
 .cover {
-    height: 2000px;
     background-color: var(--offWhite);
     font-size: 36px;
-    text-align: center
+    text-align: center;
+}
+
+.pre-footer {
+    height: 200px;
+    background-color: var(--offWhite);
 }
 
 .nav_links {
@@ -120,15 +167,27 @@ button:hover {
     border-color: var(--btnColorHover);
 }
 
-.parallax {
-    background-image: url("./img/dark_guitar.jpg");
+.splash-image {
     /* Set the height */
-    height: 80vh;
+    height: 70vh;
     /* Create a parallax effect */
     /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.intro-image {
+    background-image: url("./img/dark_guitar.jpg");
+    height: 70vh;
+}
+
+.notes-image {
+    background-image: url("./img/nord_keys.jpg");
+}
+
+.lesson-image {
+    height: 30vh;
 }
 
 code {

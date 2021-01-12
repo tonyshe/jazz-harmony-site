@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import IntroPage from './pages/IntroPage'
 import NotesPage from "./pages/NotesPage"
+import LessonsPage from "./pages/LessonsPage"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 <Switch>
                     <Route path="/" exact component={IntroPage} />
                     <Route path="/notes" exact component={NotesPage} />
+                    <Route path="/lessons" exact component={LessonsPage} />
                 </Switch>
             </BrowserRouter>
         </div >
