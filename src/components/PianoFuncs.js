@@ -35,6 +35,7 @@ class PianoFuncs extends React.Component {
 
     constructor(props) {
         super(props);
+        this.altText = props.altText
         this.midiNotes = props.midiNotes;
         this.noteRange = (props.firstNote && props.lastNote) ?
             { first: MidiNumbers.fromNote(props.firstNote), last: MidiNumbers.fromNote(props.lastNote) } :
@@ -43,6 +44,7 @@ class PianoFuncs extends React.Component {
         this.lastNote = props.lastNote || 'f4'
         this.scheduledEvents = [];
         this.width = props.width || 400
+        this.playButton = (props.midiNotes) ? <button className="main_btn" onClick={() => this.onButtonClick(this.midiNotes)}>{this.state.buttonText}</button> : null
     }
 
     getRecordingEndTime = (notes) => {
@@ -116,7 +118,8 @@ class PianoFuncs extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="interactive-piano">
+                <div className="altText">{this.altText}</div>
                 <div className="mt-5">
                     <SoundfontProvider
                         instrumentName="acoustic_grand_piano"
@@ -138,7 +141,7 @@ class PianoFuncs extends React.Component {
                     />
                 </div>
                 <div>
-                    <button className="main_btn" onClick={() => this.onButtonClick(this.midiNotes)}>{this.state.buttonText}</button>
+                    {this.midiNotes ?  <button className="main_btn" onClick={() => this.onButtonClick(this.midiNotes)}>{this.state.buttonText}</button> : null}
                 </div>
             </div>
         );
