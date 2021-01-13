@@ -29,6 +29,12 @@ h2, h3 {
     text-align: left;
 }
 
+.altText {
+    font-size: 14px;
+    font-family: 'Verdana';
+    margin-bottom: 6px;
+}
+
 .page-text p {
     font-size: 14px;
     text-align: left;
@@ -41,6 +47,7 @@ h2, h3 {
     width: 60%;
     position: absolute;
     background-color: var(--offWhite);
+    min-width: 700px;
 }
 
 .title_text {
@@ -61,6 +68,7 @@ h2, h3 {
     top: 10%;
     width: 100%;
     text-align: center;
+    min-width: 800px;
 }
 
 .lesson-title {
@@ -168,13 +176,10 @@ button:hover {
 }
 
 .splash-image {
-    /* Set the height */
-    height: 70vh;
-    /* Create a parallax effect */
-    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    min-width: 800px;
 }
 
 .intro-image {
@@ -188,6 +193,14 @@ button:hover {
 
 .lesson-image {
     height: 30vh;
+}
+
+.interactive-piano {
+    margin: 40px;
+}
+
+img {
+    margin: 40px;
 }
 
 code {
